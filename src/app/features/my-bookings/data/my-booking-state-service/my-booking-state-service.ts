@@ -1,6 +1,7 @@
-import { Component, inject, signal } from '@angular/core';
+import { Component, effect, inject, signal } from '@angular/core';
 import { Booking } from '../../../book-room/domain/booking/models/booking';
 import { MyBookingService } from '../my-booking-service/my-booking-service';
+import { AuthService } from '../../../../core/data/auth-service/auth-service';
 
 @Component({
   selector: 'app-my-booking-state-service',
@@ -10,11 +11,18 @@ import { MyBookingService } from '../my-booking-service/my-booking-service';
 })
 export class MyBookingStateService {
   private service = inject(MyBookingService);
+  private authService = inject(AuthService);
   state = signal<Booking[] | []>([]);
   isLoading = signal(false);
 
   constructor() {
-    this.loadBookings();
+    effect(
+      () => {
+        const user = this.authService.currentUser();
+        this.loadBookings();
+      },
+      { allowSignalWrites: true },
+    );
   }
 
   loadBookings() {

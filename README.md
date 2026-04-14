@@ -1,59 +1,46 @@
 # BookingSystem
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.7.
+Веб-приложение для бронирования переговорных комнат
 
-## Development server
+## Доступный функционал
+- Просмотр комнат с фильтрацией по дате, времени, вместимости и наличию оборудования
+- Асинхронная валидация с проверкой доступности комнат
+- Имитация Backend, полноценный CRUD-слой на базе LocalStorage с искусственными задержками (RxJS delay) для симуляции реальной сети
+- Переключение между пользователями с мгновенным обновлением интерфейса без перезагрузки страницы
+- Личный кабинет с историей броней и автоматическим обновлением статусов
 
-To start a local development server, run:
+## Использованные технологии
+- Angular 18+ (Standalone Components, New Control Flow @if/@for)
+- State Management: Angular Signals
+- Reactive Programming: RxJS (потоки данных, операторы фильтрации и переключения запросов)
+- Формы: Reactive Forms
 
-```bash
-ng serve
-```
+## Архитектурные решения
+- Immutability: Все изменения данных в LocalStorage происходят через создание новых копий объектов, что гарантирует предсказуемость состояния
+- Loose Coupling: UI-компоненты полностью отделены от бизнес-логики и ничего не знают о способе хранения данных
+- Async Logic: Сложные цепочки запросов (например, получение данных пользователя перед созданием брони) реализованы через RxJS операторы
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+## Установка и запуск
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
+Установите зависимости:
 
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+Запустите сервер для разработки:
 
 ```bash
-ng test
+npm run dev
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+Откройте проект в браузере:
 ```bash
-ng e2e
+http://localhost:4200
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## Контакты
 
-## Additional Resources
+Мой телеграмм: @murrmays
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Почта: maria40va@gmail.com
