@@ -1,0 +1,29 @@
+<div class="room-card">
+  <div class="room-image">
+    @if (roomInfo().imgUrl) {
+      <img [src]="roomInfo().imgUrl" [alt]="roomInfo().name" />
+    } @else {
+      <div class="image-placeholder">
+        <span class="material-icons">meeting_room</span>
+      </div>
+    }
+  </div>
+
+  <div class="room-content">
+    <div class="room-header">
+      <h3 class="room-name">{{ roomInfo().name }}</h3>
+      <span class="capacity-badge">
+        <i class="icon-user"></i> до {{ roomInfo().capacity }} чел.
+      </span>
+    </div>
+
+    <p class="equipment-title">Оборудование:</p>
+    <div class="equipment-list">
+      @for (item of roomInfo().equipment; track item) {
+        <span class="equipment-tag">{{ item }}</span>
+      } @empty {
+        <span class="no-equipment">Базовая комплектация</span>
+      }
+    </div>
+  </div>
+</div>

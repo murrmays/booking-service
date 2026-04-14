@@ -1,0 +1,18 @@
+<div class="page-container">
+  <div class="page-header">
+    <h2>Мои бронирования</h2>
+    <p>Здесь вы можете просматривать историю и отменять активные записи</p>
+  </div>
+
+  @if (isLoading()) {
+    <div class="loader-overlay">
+      <div class="spinner"></div>
+      <p>Загрузка ваших данных...</p>
+    </div>
+  } @else {
+    <app-bookings-table-component 
+      [bookings]="bookings()" 
+      (canceledBookingId)="handleCancel($event)">
+    </app-bookings-table-component>
+  }
+</div>

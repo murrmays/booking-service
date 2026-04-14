@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+  font-family: 'Inter', system-ui, sans-serif;
+  --primary-pink: #ff85a2;
+  --light-pink: #fff0f3;
+  --border-color: #ffe4e6;
+  --text-main: #4a4a4a;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='date'],
+select,
+.user-select {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid var(--border-color);
+  border-radius: 10px;
+  background-color: #fff;
+  color: var(--text-main);
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+  outline: none;
+}
+
+input:hover,
+select:hover {
+  border-color: var(--primary-pink);
+}
+
+input:focus,
+select:focus {
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 4px rgba(255, 133, 162, 0.15);
+}
+
+button:not(.logout-btn, .close-btn, .btn-cancel),
+input[type='submit'] {
+  width: 100%;
+  padding: 12px;
+  background: var(--primary-pink);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  cursor: pointer;
+  transition:
+    transform 0.1s,
+    background 0.2s;
+  box-shadow: 0 4px 12px rgba(255, 133, 162, 0.3);
+}
+
+button:hover:not(:disabled) {
+  background: #f47090;
+  transform: translateY(-1px);
+}
+
+button:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+button:disabled {
+  background: #f1f5f9;
+  color: #94a3b8;
+  cursor: not-allowed;
+  box-shadow: none;
+}

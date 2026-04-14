@@ -1,0 +1,17 @@
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.time-row {
+  display: flex;
+  gap: 1rem;
+}
+.error-text {
+  color: #e11d48;
+  font-size: 0.85rem;
+}
+.info-text {
+  color: #fb7185;
+  font-size: 0.85rem;
+}

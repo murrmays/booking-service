@@ -2,10 +2,22 @@ import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
+import { AuthService } from './core/data/auth-service/auth-service';
+import { RoomService } from './features/book-room/data/room-service/room-service';
+import { MockDatabaseService } from './core/data/mock-database-service/mock-database-service';
+import { RoomAsyncValidator } from './features/book-room/data/room-async-validator/room-async-validator';
+import { MyBookingStateService } from './features/my-bookings/data/my-booking-state-service/my-booking-state-service';
+import { MyBookingService } from './features/my-bookings/data/my-booking-service/my-booking-service';
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideBrowserGlobalErrorListeners(),
-    provideRouter(routes)
+    provideRouter(routes),
+    AuthService,
+    RoomService,
+    MockDatabaseService,
+    RoomAsyncValidator,
+    MyBookingStateService,
+    MyBookingService
   ]
 };

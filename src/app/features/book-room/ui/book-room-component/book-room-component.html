@@ -1,0 +1,45 @@
+<div class="page-wrapper">
+  <header class="page-header">
+    <h1>Бронирование переговорных комнат</h1>
+    <p class="subtitle">Выберите удобное время, и мы покажем доступные варианты</p>
+  </header>
+
+  @if (message()) {
+    <div class="alert" [class.alert-success]="!isError()" [class.alert-danger]="isError()">
+      {{ message() }}
+      <button class="close-btn" (click)="message.set('')">×</button>
+    </div>
+  }
+
+  <main class="booking-layout">    <section class="form-section">
+      <app-booking-form-component
+        [isSubmitting]="isSubmitting()"
+        [availableRooms]="availableRooms()"
+        (filterChange)="handleFilterChange($event)"
+        (formSubmit)="handleBookingSubmit($event)">
+      </app-booking-form-component>
+    </section>
+
+    <section class="results-section">
+      @if (isSearching()) {
+        <div class="loader-container">
+          <div class="spinner"></div>
+          <p>Ищем свободные комнаты...</p>
+        </div>
+      } @else {
+        @if (availableRooms().length > 0) {
+          <div class="rooms-grid">
+            @for (room of availableRooms(); track room.id) {
+              <app-room-card-component [roomInfo]="room"></app-room-card-component>
+            }
+          </div>
+        } @else {
+          <div class="empty-state">
+            <h3>Комнаты не найдены</h3>
+            <p>Попробуйте изменить параметры</p>
+          </div>
+        }
+      }
+    </section>
+  </main>
+</div>

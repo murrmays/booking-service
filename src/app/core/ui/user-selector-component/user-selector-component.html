@@ -1,0 +1,13 @@
+<div class="selector-wrapper">
+  <select 
+    [value]="currentUser()?.id" 
+    (change)="onChange($event)"
+    class="user-select">
+    
+    <option value="" disabled [selected]="!currentUser()">Войти как...</option>
+    
+    @for (user of users(); track user.id) {
+      <option [value]="user.id">{{ user.name }} ({{ user.role }})</option>
+    }
+  </select>
+</div>

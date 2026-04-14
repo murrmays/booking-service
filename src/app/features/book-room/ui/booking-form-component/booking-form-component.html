@@ -1,0 +1,58 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()" class="booking-form">
+  <div class="form-group">
+    <label>Дата бронирования</label>
+    <input type="date" formControlName="date" />
+  </div>
+
+  <div class="time-row">
+    <div class="form-group">
+      <label>Начало</label>
+      <select formControlName="startTime">
+        @for (time of timeSlots; track time) {
+          <option [value]="time">{{ time }}</option>
+        }
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Окончание</label>
+      <select formControlName="endTime">
+        @for (time of timeSlots; track time) {
+          <option [value]="time">{{ time }}</option>
+        }
+      </select>
+    </div>
+  </div>
+  @if (form.hasError('invalidTime')) {
+    <div class="error-text">Внимание: Время окончания должно быть позже времени начала!</div>
+  }
+  <div class="form-group">
+    <label>Минимальная вместимость</label> <input type="number" formControlName="minCapacity" />
+  </div>
+  <div class="form-group">
+    <label>Поиск оборудования</label> <input type="text" formControlName="equipSearch" />
+  </div>
+
+  <div class="form-group">
+    <label>Комната</label>
+    <select formControlName="roomId">
+      <option value="">Выберите комнату</option>
+      @for (room of availableRooms(); track room.id) {
+        <option [value]="room.id">{{ room.name }} ({{ room.capacity }} чел.)</option>
+      } @empty {
+        <option disabled>Нет доступных комнат</option>
+      }
+    </select>
+  </div>
+  @if (form.pending) {
+    <div class="info-text">Проверяем доступность комнаты...</div>
+  }
+
+  @if (form.hasError('roomOccupied')) {
+    <div class="error-text">Комната уже занята на это время. Выберите другую.</div>
+  }
+
+  <button type="submit" [disabled]="form.invalid || form.pending || isSubmitting()">
+    {{ isSubmitting() ? 'Бронируем...' : 'Забронировать' }}
+  </button>
+</form>

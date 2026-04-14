@@ -1,0 +1,26 @@
+<header class="main-header">
+  <div class="header-container">
+    <div class="logo" routerLink="/">
+      <span class="text">RoomBooking</span>
+    </div>
+
+    <nav class="main-nav">
+      <a routerLink="/book" routerLinkActive="active-link">Забронировать</a>
+      <a routerLink="/my-bookings" routerLinkActive="active-link">Мои брони</a>
+    </nav>
+
+    <div class="auth-section">
+      <app-user-selector-component 
+        [users]="allUsers()" 
+        [currentUser]="currentUser()"
+        (select)="onUserSelect($event)">
+      </app-user-selector-component>
+
+      @if (currentUser()) {
+        <button class="logout-btn" (click)="onLogout()">
+          Выйти
+        </button>
+      }
+    </div>
+  </div>
+</header>
