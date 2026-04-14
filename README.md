@@ -39,6 +39,23 @@ npm run dev
 http://localhost:4200
 ```
 
+## Скриншоты
+
+<table>
+  <tr>
+    <td width="50%" align="center">
+      <img src="https://github.com/user-attachments/assets/1ebb4c22-74d8-40e0-8f28-d81cfc206b83" alt="Создание брони"/>
+      <br />
+      <b>Создание брони</b>
+    </td>
+    <td width="50%" align="center">
+      <img src="https://github.com/user-attachments/assets/9960e3fe-42f0-48f7-8c2e-05c99602bb3c" alt="Мои брони"/>
+      <br />
+      <b>Просмотр списка</b>
+    </td>
+  </tr>
+</table>
+
 ## Контакты
 
 Мой телеграмм: @murrmays
