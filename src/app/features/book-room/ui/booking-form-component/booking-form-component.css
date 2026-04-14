@@ -12,6 +12,6 @@
   font-size: 0.85rem;
 }
 .info-text {
-  color: #fb7185;
+  color: var(--primary-pink);
   font-size: 0.85rem;
 }

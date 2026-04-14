@@ -1,21 +1,31 @@
+:host {
+  display: block;
+  background-color: var(--bg-color);
+  min-height: 100vh;
+  font-family: 'Inter', system-ui, sans-serif;
+  justify-content: center;
+  align-items: center;
+}
+
 .page-container {
   max-width: 1000px;
-  margin: 2rem auto;
-  padding: 0 1rem;
+  margin: 0 auto;
+  padding: 2rem 1rem;
 }
 
 .page-header {
+  margin-top: 0;
   margin-bottom: 2rem;
 }
 
 .page-header h2 {
   font-size: 1.875rem;
-  color: #1a202c;
+  color: var(--text-main);
   margin-bottom: 0.5rem;
 }
 
 .page-header p {
-  color: #718096;
+  color: var(--text-main);
 }
 
 .loader-overlay {

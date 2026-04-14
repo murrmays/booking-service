@@ -5,14 +5,12 @@
   </div>
 
   @if (isLoading()) {
-    <div class="loader-overlay">
-      <div class="spinner"></div>
-      <p>Загрузка ваших данных...</p>
-    </div>
+  <div class="loader-overlay">
+    <div class="spinner"></div>
+    <p>Загрузка ваших данных...</p>
+  </div>
   } @else {
-    <app-bookings-table-component 
-      [bookings]="bookings()" 
-      (canceledBookingId)="handleCancel($event)">
-    </app-bookings-table-component>
+  <app-bookings-table-component [bookings]="bookings()" (canceledBookingId)="handleCancel($event)">
+  </app-bookings-table-component>
   }
 </div>

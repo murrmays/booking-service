@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig, importProvidersFrom, provideBrowserGlobalErrorListeners } from '@angular/core';
 import { provideRouter } from '@angular/router';
 
 import { routes } from './app.routes';
@@ -8,6 +8,7 @@ import { MockDatabaseService } from './core/data/mock-database-service/mock-data
 import { RoomAsyncValidator } from './features/book-room/data/room-async-validator/room-async-validator';
 import { MyBookingStateService } from './features/my-bookings/data/my-booking-state-service/my-booking-state-service';
 import { MyBookingService } from './features/my-bookings/data/my-booking-service/my-booking-service';
+import { LucideAngularModule, Moon, Sun } from 'lucide-angular';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -18,6 +19,9 @@ export const appConfig: ApplicationConfig = {
     MockDatabaseService,
     RoomAsyncValidator,
     MyBookingStateService,
-    MyBookingService
+    MyBookingService,
+    importProvidersFrom(
+      LucideAngularModule.pick({ Moon, Sun})
+    )
   ]
 };

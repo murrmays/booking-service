@@ -10,17 +10,27 @@
     </nav>
 
     <div class="auth-section">
-      <app-user-selector-component 
-        [users]="allUsers()" 
+      <app-user-selector-component
+        [users]="allUsers()"
         [currentUser]="currentUser()"
-        (select)="onUserSelect($event)">
+        (select)="onUserSelect($event)"
+      >
       </app-user-selector-component>
 
       @if (currentUser()) {
-        <button class="logout-btn" (click)="onLogout()">
-          Выйти
-        </button>
+      <button class="logout-btn" (click)="onLogout()">Выйти</button>
       }
+      <button
+        class="theme-toggle"
+        (click)="themeService.toggleTheme()"
+        [attr.aria-label]="themeService.darkMode() ? 'Включить светлую тему' : 'Включить темную тему'"
+      >
+        @if (themeService.darkMode()) {
+        <span class="icon"><lucide-icon name="sun"></lucide-icon></span>
+        } @else {
+        <span class="icon"> <lucide-icon name="moon"></lucide-icon></span>
+        }
+      </button>
     </div>
   </div>
 </header>

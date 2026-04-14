@@ -1,9 +1,10 @@
 .table-container {
-  background: white;
+  background: var(--card-bg);
   border-radius: 16px;
-  border: 1px solid #fff1f2;
+  border: 1px solid var(--border-color);
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   overflow: hidden;
+  color: var(--text-main);
 }
 
 .custom-table {
@@ -18,8 +19,8 @@
 }
 
 .custom-table th {
-  background: #fffafb;
-  color: #9f1239;
+  background: var(--bg-color);
+  color: var(--text-accent);
   font-weight: 700;
   letter-spacing: 0.05em;
   padding: 1.25rem 1rem;
@@ -48,9 +49,9 @@
   letter-spacing: 0.025em;
 
   padding: 0.6rem 1.2rem;
-  background: #ffffff;
-  color: #e11d48;
-  border: 1.5px solid #ffe4e6;
+  background: var(--bg-color);
+  color: var(--dark-pink);
+  border: 1.5px solid var(--border-color);
   border-radius: 8px;
 
   cursor: pointer;
@@ -58,8 +59,8 @@
 }
 
 .btn-cancel:hover {
-  background: #fff1f2;
-  border-color: #fb7185;
+  background: var(--bg-color);
+  border-color: var(--primary-pink);
   color: #be123c;
 }
 

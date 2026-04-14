@@ -5,16 +5,20 @@ import { User } from '../../domain/models/user';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { UserSelectorComponent } from '../user-selector-component/user-selector-component';
 import { RouterLink, RouterLinkActive } from '@angular/router';
+import { ThemeService } from '../../theme/theme-service/theme-service';
+import { LucideAngularModule} from 'lucide-angular';
 
 @Component({
   selector: 'app-header',
-  imports: [UserSelectorComponent, RouterLink, RouterLinkActive],
+  imports: [UserSelectorComponent, RouterLink, RouterLinkActive, LucideAngularModule],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
   private authService = inject(AuthService);
   private db = inject(MockDatabaseService);
+
+  themeService = inject(ThemeService)
 
   currentUser = this.authService.currentUser;
   username = computed(() => (this.currentUser() ? this.currentUser()!.name : 'Гость'));

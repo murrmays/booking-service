@@ -1,8 +1,9 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { BookRoomComponent } from './features/book-room/ui/book-room-component/book-room-component';
 import { Header } from './core/ui/header/header';
 import { MyBookingsComponent } from './features/my-bookings/ui/my-bookings-component/my-bookings-component';
+import { ThemeService } from './core/theme/theme-service/theme-service';
 
 @Component({
   selector: 'app-root',
@@ -12,4 +13,5 @@ import { MyBookingsComponent } from './features/my-bookings/ui/my-bookings-compo
 })
 export class App {
   protected readonly title = signal('booking-system');
+  private themeService = inject(ThemeService)
 }

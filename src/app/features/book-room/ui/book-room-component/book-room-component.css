@@ -1,6 +1,6 @@
 :host {
   display: block;
-  background-color: #fffafb;
+  background-color: var(--bg-color);
   min-height: 100vh;
   font-family: 'Inter', system-ui, sans-serif;
   justify-content: center;
@@ -20,7 +20,7 @@
 
 .page-header h1,
 .page-header h2 {
-  color: #1f2937;
+  color: var(--text-main);
   font-size: 2.25rem;
   font-weight: 800;
   margin-bottom: 0.75rem;
@@ -29,7 +29,7 @@
 
 .subtitle,
 .page-header p {
-  color: #6b7280;
+  color: var(--text-main);
   font-size: 1.1rem;
   font-weight: 400;
 }
@@ -47,10 +47,11 @@
 }
 
 .form-section {
-  background: white;
+  background: var(--card-bg);
+  color: var(--text-main);
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid #fff1f2;
+  border: 1px solid var(--border-color);
   box-shadow: 0 10px 25px -5px rgba(251, 113, 133, 0.05);
   position: sticky;
   top: 90px;
@@ -114,14 +115,14 @@
 .empty-state {
   text-align: center;
   padding: 4rem 0;
-  color: #64748b;
+  color: var(--text-accent);
 }
 
 .spinner {
   width: 35px;
   height: 35px;
-  border: 3px solid #fff1f2;
-  border-top: 3px solid #fb7185;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--primary-pink);
   border-radius: 50%;
 }
 
