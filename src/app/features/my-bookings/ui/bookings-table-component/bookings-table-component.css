@@ -15,7 +15,7 @@
 .custom-table th,
 .custom-table td {
   padding: 1rem;
-  border-bottom: 1px solid #edf2f7;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .custom-table th {
@@ -30,15 +30,6 @@
   padding: 0.35rem 0.85rem;
   border-radius: 10px;
   font-size: 0.7rem;
-}
-
-.status-active {
-  background: #f0fdf4;
-  color: #166534;
-}
-.status-cancelled {
-  background: #fff1f2;
-  color: #9f1239;
 }
 
 .btn-cancel {

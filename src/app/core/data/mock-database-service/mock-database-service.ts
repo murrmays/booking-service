@@ -161,7 +161,7 @@ export class MockDatabaseService {
       const bookingEndDateTime = new Date(`${b.date}T${b.endTime}`);
       if (bookingEndDateTime < now) {
         wasChanged = true;
-        return { ...b, status: 'completed' };
+        return { ...b, status: 'завершена' };
       }
 
       return b;
@@ -179,7 +179,7 @@ export class MockDatabaseService {
           id: crypto.randomUUID(),
           name: 'Бетта',
           capacity: 12,
-          equipment: ['Проектор', 'Видео конференции'],
+          equipment: ['Проектор', 'Экран'],
         },
         { id: crypto.randomUUID(), name: 'Гамма', capacity: 2, equipment: ['Монитор'] },
       ];

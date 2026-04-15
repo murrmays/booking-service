@@ -9,13 +9,13 @@
   --text-accent: #9f1239;
 }
 .dark-theme {
-  --primary-pink: #e46a87;
-  --dark-pink: #f43f5e;
-  --bg-color: #2a0f20;
-  --card-bg: #56233e;
-  --border-color: #3b1e2a;
+  --primary-pink: #ff9db5;
+  --dark-pink: #fb7185;
+  --bg-color: #121214;
+  --card-bg: #1e1b1c;
+  --border-color: #3d2d30;
   --text-main: #fff0f3;
-  --text-accent: #ffb5c3;
+  --text-accent: #fda4af;
 }
 
 body {
